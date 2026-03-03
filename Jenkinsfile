@@ -18,13 +18,13 @@ pipeline{
         stage('test'){
             steps{
                 echo 'this is the test job'
-                sh 'test clean'
+                sh 'mvn test'
             }
         }
         stage('package'){
             steps{
                 echo 'this is the package job'
-                sh 'nvm package -DskipTests'
+                sh 'mvn package -DskipTests'
             }
         }
     }
